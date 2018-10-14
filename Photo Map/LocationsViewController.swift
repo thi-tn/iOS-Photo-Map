@@ -63,9 +63,18 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         let latString = "\(lat)"
         let lngString = "\(lng)"
 
-        print(latString + " " + lngString)
+ //       print(latString + " " + lngString)
         
-        self.navigationController?.popToViewController(UIViewController() as! PhotoMapViewController, animated: true)
+        delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng)
+        
+//        if let navController = self.navigationController {
+//            for controller in navController.viewControllers {
+//                if controller is PhotoMapViewController { // Change to suit your menu view controller subclass
+//                    navController.popToViewController(controller, animated:true)
+//                    break
+//                }
+//            }
+//        }
     }
     
     
